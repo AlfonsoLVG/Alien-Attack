@@ -8,6 +8,7 @@ radius = 19.0
 height = 98.0
 
 [node name="Player" type="CharacterBody2D"]
+motion_mode = 1
 script = ExtResource("1_g144j")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
