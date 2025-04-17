@@ -12,3 +12,10 @@ func _physics_process(delta):
 
 func _on_screen_exited():
 	queue_free()
+
+func _on_area_entered(area: Area2D) -> void:
+	print(area.name)
+	
+	if area.has_method("die"):
+		queue_free()
+		area.die()
