@@ -18,4 +18,3 @@ func spawn_enemy():
 	var enemy_instance = enemy_scene.instantiate()
 	enemy_instance.global_position = positions.pick_random().global_position
 	emit_signal("enemy_spawned", enemy_instance)
-	#add_child(enemy_instance)
