@@ -8,6 +8,7 @@ var score = 0
 
 func _ready():
 	hud.set_score_label(score)
+	hud.set_lives_left(lives)
 
 func _on_death_zone_area_entered(area: Area2D) -> void:
 	if area.has_method("die"):
@@ -15,6 +16,7 @@ func _on_death_zone_area_entered(area: Area2D) -> void:
 
 func _on_player_took_damage() -> void:
 	lives -= 1
+	hud.set_lives_left(lives)
 	if lives == 0:
 		player.die()
 
