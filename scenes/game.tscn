@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dmoulgo0rvuf5"]
+[gd_scene load_steps=8 format=3 uid="uid://dmoulgo0rvuf5"]
 
 [ext_resource type="Texture2D" uid="uid://ceq40e1qg2w3v" path="res://assets/textures/bg.png" id="1_k5bxv"]
 [ext_resource type="Script" uid="uid://rxepaejv0eb2" path="res://scripts/game.gd" id="1_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://egscsflm0yaf" path="res://scenes/hud.tscn" id="2_iywne"]
 [ext_resource type="PackedScene" uid="uid://cfn8vs4bje0ob" path="res://scenes/player.tscn" id="2_t4dfy"]
 [ext_resource type="PackedScene" uid="uid://bsjsuhq7mgx8t" path="res://scenes/enemy_spawner.tscn" id="3_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://bb4wt4eek1d2p" path="res://scenes/path_enemy.tscn" id="6_p57ef"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lbhrr"]
 size = Vector2(52, 720)
@@ -34,6 +35,8 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone"]
 position = Vector2(-150, 360)
 shape = SubResource("RectangleShape2D_lbhrr")
+
+[node name="PathEnemy" parent="." instance=ExtResource("6_p57ef")]
 
 [connection signal="took_damage" from="Player" to="." method="_on_player_took_damage"]
 [connection signal="enemy_spawned" from="EnemySpawner" to="." method="_on_enemy_spawner_enemy_spawned"]
